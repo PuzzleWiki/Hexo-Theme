@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="row" style="margin-top: 2em;">
+        <div class="card rounded-lg shadow-sm w-100">
+            <h4 class="card-header">正在进行</h4>
+            <div class="card-body">
+                <% if (theme.index.now === undefined) {%>
+                    <p>目前没有正在进行的解谜活动，可以前往 <a href="/categories/长期运营/">长期运营</a> 页面寻找长期运营的活动哦，也可以通过顶部栏的分类和标签寻找活动~</p>
+                    <%- is_home() %>
+                <% } else { %> 
+                    <% for (var item = 0; item<theme.index.now.length; item++) {%>
+                        <% if (item % 3 === 0) {%>
+                            <div class="row">
+                        <% } %>
+                            <div class="col-lg-4 d-flex align-items-stretch">
+                                <%- include("modules/card-sm",theme.index.now[item]) %>
+                            </div>
+                        <% if (item % 3 === 2 || item === theme.index.now.length -1) {%>
+                            </div>
+                        <% } %>
+                    <% } %> 
+                <% } %> 
+            </div>
+        </div>
+    </div>
+    <div class="row" style="margin-top: 2em;">
+        <div class="card rounded-lg shadow-sm w-100">
+            <h4 class="card-header">尚未开始</h4>
+            <div class="card-body">
+                <% if (theme.index.upcoming === undefined) {%>
+                    <p>目前没有尚未开始的解谜活动，可以前往 <a href="/categories/长期运营/">长期运营</a> 页面寻找长期运营的活动哦，也可以通过顶部栏的分类和标签寻找活动~</p>
+                <% } else { %> 
+                    <% for (var item = 0; item<theme.index.upcoming.length; item++) {%>
+                        <% if (item % 3 === 0) {%>
+                            <div class="row">
+                        <% } %>
+                            <div class="col-lg-4 d-flex align-items-stretch">
+                                <%- include("modules/card-sm",theme.index.upcoming[item]) %>
+                            </div>
+                        <% if (item % 3 === 2 || item === theme.index.upcoming.length -1) {%>
+                            </div>
+                        <% } %>
+                    <% } %> 
+                <% } %> 
+            </div>
+        </div>
+    </div>
+</div>

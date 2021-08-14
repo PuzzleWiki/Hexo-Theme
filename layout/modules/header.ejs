@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%- theme.title %> </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=<%- theme.googleAnalytics %>"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', '<%- theme.googleAnalytics %>');
+    </script>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet">
+
+    <!-- Icons -->
+    <link href="https://cdn.jsdelivr.net/gh/creativetimofficial/argon-design-system@master/assets/css/nucleo-icons.css" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+
+    <!-- Theme CSS -->
+    <link type="text/css" href="https://cdn.jsdelivr.net/gh/creativetimofficial/argon-design-system@master/assets/css/argon-design-system.min.css" rel="stylesheet">
+    <%- css('css/global.css') %> 
+</head>
+<body style="background: #e9ecef; overflow-x:hidden;">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="/"><%- theme.title %></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-default" aria-controls="navbar-default" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbar-default">
+                <div class="navbar-collapse-header">
+                    <div class="row">
+                        <div class="col-6 collapse-brand">
+                            <a href="/"><%- theme.title %></a>
+                        </div>
+                        <div class="col-6 collapse-close">
+                            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-default" aria-controls="navbar-default" aria-expanded="false" aria-label="Toggle navigation">
+                                <span></span>
+                                <span></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <ul class="navbar-nav ml-lg-auto">
+                    <% for (menu in theme.topbar) { %>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<%- theme.topbar[menu] %> "><%- menu %> </a>
+                        </li>
+                    <% } %>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">分类</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                             <%- list_categories(site.categories,{
+                                class:"dropdown-item ",
+                                style: false,
+                                separator: '',
+                                show_count: false
+                             }) %>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">标签</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                             <%- list_tags(site.tags,{
+                                class:"dropdown-item ",
+                                style: false,
+                                separator: '',
+                                show_count: false
+                             }) %>
+                        </div>
+                    </li>
+                </ul>
+                
+            </div>
+        </div>
+    </nav>

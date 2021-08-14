@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="card rounded-lg shadow-sm w-100" style="margin-top: 2em;">
+        <h4 class="card-header"><%- page.category %></h4>
+        <div class="card-body">
+            <div class="card-text">
+            <% page.posts.each(function(post){ %>
+                <div class="row">
+                    <div class="col">
+                        <%- include("modules/card-lg",{image:post.image,link:url_for(post.path),title:post.title,intro:post.intro}) %>
+                    </div>
+                </div>
+            <% }) %>
+            </div>
+        </div>
+    </div>
+</div>

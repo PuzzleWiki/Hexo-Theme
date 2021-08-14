@@ -1,0 +1,27 @@
+<%- css("css/authorBox.css") %> 
+<div class="container">
+    <div class="card rounded-lg shadow-lg" style="margin-top: 2em;">
+        <img class="card-img-top img-fluid" src="<%- page.image %> " style="max-height: 400px; object-fit: cover;">
+        <div class="card-body">
+            <div class="card-title text-center">
+                <h1><%- page.title %></h1>
+                <%- list_categories(page.categories,{
+                    class:"badge badge-pill badge-primary ",
+                    style: false,
+                    separator: ' ',
+                    show_count: false
+                 }) %>
+                 <%- list_categories(page.tags,{
+                    class:"badge badge-pill badge-info ",
+                    style: false,
+                    separator: ' ',
+                    show_count: false
+                 }) %>
+            </div>
+            <div class="card-text">
+                <%- page.content %>
+            </div>
+        </div>
+    </div>
+</div>
+<%- js("js/authorBox.js") %>
