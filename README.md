@@ -6,7 +6,7 @@
 
 请将本 repo clone 至你的 `<hexo 根目录>/themes` 文件夹。
 
-将 `<hexo 根目录>/themes/_config-example.yml` 重命名为  `_config.yml`。
+将 `<hexo 根目录>/themes/puzzlewiki/_config-example.yml` 重命名为  `_config.yml`。
 
 在 `<hexo 根目录>/_config.yml` 中修改：
 
@@ -15,6 +15,19 @@ theme: puzzlewiki
 ```
 
 即可使用。
+
+## 主题配置
+
+直接修改 `<hexo 根目录>/themes/puzzlewiki/_config.yml` 即可进行主题的配置。各项的具体含义如下：
+
+```yaml
+topbar: # 顶部栏设置
+  主页: /
+  关于: /about
+  #以 顶部栏文字: 该文字所对应地址 的格式修改或追加即可
+
+googleAnalytics: G-XXXXXXXXXX # Google Analytic 的衡量 ID，不更改则视为不开启站点统计
+```
 
 ## 主页配置
 
