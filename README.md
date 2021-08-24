@@ -57,4 +57,20 @@ index:
       link:
 ```
 
-即可实现主页内容的配置。如果一个分类下没有任何活动请直接把这个分类删掉以显示错误信息。
+即可实现主页内容的配置。如果一个分类下没有任何活动请直接把这个分类设为 `null`，比如：
+
+```yaml
+index:
+  now: null # 没有正在进行的活动
+  upcoming: # 尚未开始
+    - title: # Puzzle 的标题
+      image: # Puzzle 的主视觉图
+      intro: # Puzzle 的简单介绍
+      link: # Puzzle 对应 post 的地址
+    - title: # 可增加多个 Puzzle
+      image:
+      intro:
+      link:
+```
+
+以显示错误信息。
